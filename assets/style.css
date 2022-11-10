@@ -1,52 +1,61 @@
-/* * {
-    border: 1px solid black;
-} */
-
 :root{
     --first:rgb(253, 119, 119);
     --second:rgb(236, 170, 181);
 }
 
-a {
-    text-decoration: none;
+a { /* todos os links do site */
+    text-decoration: none; /* tirar o sublinhado dos links */
 }
 
 body > header {
-    height: 50px;
+    height: 50px; /* altura do header*/
 }
 
 .container {
-    width: 100%;
+    width: 100%; /*width: 100%; = Para telas menores, ele irá ocupar a largura da tela toda*/
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.main{
+.main{ /* div que engloba a logo e os links */
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 50px;
+    border: 1px solid black;
 }
 
-#logo{
+#main-nav{ /* nav que está os links */
     display: flex;
     align-items: center;
-    width: 200px;
+    width: 300px;
     height: 40px;
+    border: 1px solid black;
 }
 
-#logo svg{
-    width: 40px;
-    height: 40px;
-    margin: 0 10px 0 0;
-    fill: var(--primary);
+#main-nav ul{ /* lista não ordenada com as listas e links*/
+    margin: 0;
+    padding: 0;
+    display: flex; /* Deixa os links da nav um do lado do outro */
 }
 
-#logo h1{
+#main-nav ul li{ /* listas com os links*/
+    list-style-type: none;
+    margin:  0 0 0 20px;
+}
+
+#main-nav ul li a{ /* links do nav */
+    color: var(--first);
+    font-size: 1.2rem;
+}
+
+#main-nav ul li a:hover{ /* links do nav, porém quando o mouse é passado por cima */
+    color: var(--second);
+}
+
+.active, #main-nav ul li a.active{ /* link do nav que está com a classe active, ou seja, ativado */
     color: var(--primary);
-}
-
-#logo h1 span{
-    color: var(--grey-1000);
-    font-weight: 400;
+    font-weight: 700px;
+    border-bottom: 3px solid var(--primary);
+    padding: 9px;
 }
