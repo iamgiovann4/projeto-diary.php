@@ -1,61 +1,67 @@
+/* * {
+    border: 1px solid black;
+} */
+
 :root{
+    --header: rgb(137, 206, 183);
     --first:rgb(253, 119, 119);
     --second:rgb(236, 170, 181);
 }
 
-a { /* todos os links do site */
-    text-decoration: none; /* tirar o sublinhado dos links */
-}
-
-body > header {
+body > nav {
+    background-color: var(--header);
     height: 50px; /* altura do header*/
 }
 
-.container {
-    width: 100%; /*width: 100%; = Para telas menores, ele irá ocupar a largura da tela toda*/
-    max-width: 1100px;
+/*.container {
+    width: 100%; width: 100%; = Para telas menores, ele irá ocupar a largura da tela toda
+    max-width: 1100px; largura maxima, ou seja, ele ficará no centro dependendo do tamanho da tela 
     margin: 0 auto;
+}*/
+
+ a {  /* todos os links do site  */
+    text-decoration: none; /* tirar o sublinhado dos links */
 }
 
-.main{ /* div que engloba a logo e os links */
+/* .main{ div que engloba a logo e os links 
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 50px;
     border: 1px solid black;
-}
+}*/
 
-#main-nav{ /* nav que está os links */
+/*#navbarsite{  nav que está os links 
     display: flex;
     align-items: center;
     width: 300px;
     height: 40px;
     border: 1px solid black;
-}
+}*/
 
-#main-nav ul{ /* lista não ordenada com as listas e links*/
+/*#navbarsite ul{ lista não ordenada com as listas e links
     margin: 0;
     padding: 0;
-    display: flex; /* Deixa os links da nav um do lado do outro */
-}
+    display: flex; Deixa os links da nav um do lado do outro 
+}*/
 
-#main-nav ul li{ /* listas com os links*/
+/*#navbarsite ul li{  listas com os links
     list-style-type: none;
     margin:  0 0 0 20px;
-}
+}*/
 
-#main-nav ul li a{ /* links do nav */
+/*#navbarsite ul li a{  links do nav 
     color: var(--first);
     font-size: 1.2rem;
-}
+}*/
 
-#main-nav ul li a:hover{ /* links do nav, porém quando o mouse é passado por cima */
+/*#navbarsite ul li a:hover{  links do nav, porém quando o mouse é passado por cima 
     color: var(--second);
-}
+}*/
 
-.active, #main-nav ul li a.active{ /* link do nav que está com a classe active, ou seja, ativado */
+/*.active, #navbarsite ul li a.active{  link do nav que está com a classe active, ou seja, ativado 
     color: var(--primary);
     font-weight: 700px;
     border-bottom: 3px solid var(--primary);
     padding: 9px;
-}
+}*/
