@@ -1,53 +1,59 @@
-/* * {
-    border: 1px solid black;
-} */
-
 :root{
     --header: rgb(137, 206, 183);
     --first:rgb(253, 119, 119);
     --second:rgb(236, 170, 181);
 }
 
-body > nav {
+.navbar, .container, nav {
+    border: 1px solid black;
+}
+
+body > .navbar {
     background-color: var(--header);
-    height: 50px; /* altura do header*/
 }
 
-/*.container {
-    width: 100%; width: 100%; = Para telas menores, ele irá ocupar a largura da tela toda
-    max-width: 1100px; largura maxima, ou seja, ele ficará no centro dependendo do tamanho da tela 
-    margin: 0 auto;
-}*/
-
- a {  /* todos os links do site  */
-    text-decoration: none; /* tirar o sublinhado dos links */
-}
-
-/* .main{ div que engloba a logo e os links 
+.main{ /* div que engloba a logo e os links */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 50px;
-    border: 1px solid black;
-}*/
+}
 
-/*#navbarsite{  nav que está os links 
+.navbar > .container {
+    width: 100%; /* width: 100%; = Para telas menores, ele irá ocupar a largura da tela toda */
+    max-width: 1100px; /* largura maxima, ou seja, ele ficará no centro dependendo do tamanho da tela */
+    margin: 0 auto;
+}
+
+.navbar > .main > #main-nav {
+    height: 100px; /* altura do header*/
+}
+
+#navbarsite > .navbar-nav{
+    display: flex;
+}
+
+#navbarsite > .navbar-nav > .nav-item{  /*listas com os links*/
+    list-style-type: none;
+    margin:  0 0 0 20px;
+}
+
+a {  /* todos os links do site */
+    text-decoration: none; /*tirar o sublinhado dos links*/
+}
+
+/*#navbarsite{  /* nav que está os links 
     display: flex;
     align-items: center;
     width: 300px;
     height: 40px;
     border: 1px solid black;
-}*/
+} */
 
 /*#navbarsite ul{ lista não ordenada com as listas e links
     margin: 0;
     padding: 0;
     display: flex; Deixa os links da nav um do lado do outro 
-}*/
-
-/*#navbarsite ul li{  listas com os links
-    list-style-type: none;
-    margin:  0 0 0 20px;
 }*/
 
 /*#navbarsite ul li a{  links do nav 
