@@ -1,15 +1,5 @@
-// function teste() {
-//     alert('Olá, my cat!');
-//     var num = prompt('Quantos anos?');
-//     console.log('Eu tenho ' + num + ' anos!!');
-
-//     var paragrafo = document.createElement('p');
-//     paragrafo.innerHTML= 'Eu tenho ' + num + ' anos!!';
-
-//     var div = document.querySelector('.wrapper');
-//     div.appendChild(paragrafo);  
-// }
-
-// window.onload = function () {
-//     teste();
-// }
+function showModal(idModal){ 
+    //idModal é usado para avisar que há um parâmetro lá no html, o texto pode ser qualquer coisa para avisar que o parâmetro será um texto.
+    const modal = document.querySelector(idModal)
+    modal.style.display = "flex"
+}
