@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>GalleryFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+    <title>PhotoDiary</title>
 </head>
 <body>
     <div class="container-fluid">           
         <header class="navbar navbar-expand-lg navbar-light bg-feature bg-nav">
             <div class="main container flex">
                 <a class="logoTitle" href="/PhotoFlix/">
-                    <div>
-                        <img src="img/logo.svg" alt="logo">
+                    <div id="svg">
+                        <img src="assets/img/logo.svg" alt="logo">
                     </div>
                     <div id="logo">
-                        <h1>PhotoFlix</h1>
+                        <h1>Photo<span>Diary</span></h1>
                     </div>
                 </a>
 
@@ -40,13 +44,36 @@
 
         <main>
             <header class="container">
-                <h3>Suas Imagens</h3>
-                <button onclick="addPhoto">Adicionar Foto</button>
+                <button onclick="showModal('#modal-cadastrar')">Adicionar Foto</button>
             </header>
+
+            <section class="container">
+                <h3 class="section-title">Suas Imagens</h3>
+                <article id="productions">
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                    <div class="card-img">
+                    </div>
+                </article>
+            </section>
         </main>
 
         <footer class="text-center">
-            <p>© Copyright 2022 PhotoFlix | Todos os direitos Reservados</p>
+            <p>© Copyright 2022 PhotoDiary | Todos os direitos Reservados</p>
             <p>Giovanna Siqueira Nicolau</p>
         </footer>
     </div>
@@ -69,7 +96,26 @@
         </div>
     </div>
 
-    <script src="assets/script.js"></script>
+    <div class="modal" id="modal-editar" onclick="hideModal('#modal-editar', event)">
+        <div class="modal-body">
+            <h1>Editar Imagens</h1>
+
+            <form onsubmit="edit(event)">
+                <label>Cover:</label>
+                <input type="text" name="cover">
+                <label>Título:</label>
+                <input type="text" name="titulo">
+                <label>Legenda:</label>
+                <input type="text" name="legenda">
+                <label>Autor:</label>
+                <input type="text" name="autor">
+                <input type="hidden" name="id">
+                <button type="submit">Editar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </body>
