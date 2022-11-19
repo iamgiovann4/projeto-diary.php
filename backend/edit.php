@@ -8,7 +8,7 @@
     $autor = $_POST["autor"];
 
     try{
-        $stmt = $conn->prepare("UPDATE addphoto SET cover = :cover, titulo = :titulo, legenda = :leganda, autor = :autor WHERE id = :id;");
+        $stmt = $conn->prepare("UPDATE addphoto SET cover = :cover, titulo = :titulo, legenda = :legenda, autor = :autor WHERE id = :id;");
         
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':cover', $cover);

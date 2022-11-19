@@ -54,11 +54,11 @@ async function loadProductions(){
                     </a>
                     <div>
                         <p>${img.legenda}</p>
-                        <img src="assets/img/trash-icon.svg" alt="Apagar" onclick="deleteProduction(${img.id})">
-                        <img src="assets/img/edit-icon.svg" alt="Apagar" onclick="loadProductionData(${img.id})">
                     </div>
                     <div>
                         <p>${img.autor}</p>
+                        <img src="assets/img/delete.svg" alt="Apagar"   onclick="deleteProduction(${img.id})">
+                        <img src="assets/img/edit.svg" alt="Apagar"    onclick="loadProductionData(${img. id})">
                     </div>
                 </div>
             </div>`
