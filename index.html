@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
 
-    <title>PhotoDiary</title>
+    <title>Princess'Diary</title>
 </head>
 <body onload="loadProductions()">
     <div class="container-fluid">           
@@ -22,8 +22,8 @@
                     <div id="svg">
                         <img src="assets/img/logo.svg" alt="logo">
                     </div>
-                    <div id="logo">
-                        <h1>Photo<span id="titulo">Diary</span></h1>
+                    <div>
+                        <h1 id="logo">Princess'<span id="titulo">Diary</span></h1>
                     </div>
                 </a>
 
@@ -72,7 +72,7 @@
         </main>
 
         <footer class="text-center">
-            <p>© Copyright 2022 PhotoDiary | Todos os direitos Reservados</p>
+            <p>© Copyright 2022 Princess'Diary | Todos os direitos Reservados</p>
             <p>Giovanna Siqueira Nicolau</p>
         </footer>    
         
@@ -81,7 +81,7 @@
             <div class="modal-body">
                 
                 <form onsubmit="insert(event)"><!--method="POST" action="backend/insert.   php" -->
-                    <h1>Cadastrar Foto</h1>    
+                    <h1 class="tmodal text-align-center">Cadastrar Foto</h1>    
                     <label>Título:</label>
                     <input type="text" name="titulo">
                     <label>Legenda:</label>
@@ -99,7 +99,7 @@
             <div class="modal-body">
                 
                 <form onsubmit="edit(event)">
-                    <h1>Editar Imagens</h1>
+                    <h1 class="tmodal text-align-center">Editar Imagens</h1>
                     <label>Cover:</label>
                     <input type="text" name="cover">
                     <label>Título:</label>

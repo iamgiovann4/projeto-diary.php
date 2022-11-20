@@ -50,6 +50,11 @@ h1 {
     margin: 0 0 0 20px;
 }
 
+/* .navbar-collapse {
+    display: flex;
+    justify-content: space-around;
+} */
+
 a {   /* todos os links do site */
     text-decoration: none; /* tirar o sublinhado dos links*/
 }
@@ -172,9 +177,6 @@ section > .section-title{
     margin-left: auto;
 }
 
-
-
-
 footer{
     color: white;
     padding: 10px 0 5px 0;
@@ -184,6 +186,11 @@ footer{
 
 footer:hover {
     color: rgb(214, 211, 211);
+}
+
+.tmodal {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.76);
 }
 
 .modal{
@@ -221,10 +228,45 @@ footer:hover {
 
 .modal .modal-body form button{
     border-radius: 10px;
-    width: 30%;
+    width: 50%;
     margin: 15px auto 0 auto;
 }
 
 .modal .modal-body form button:hover{
     background-color: var(--second);
 }
+
+
+/* @media screen and (max-width: 767px) {
+    .modal .modal-body form{
+        width: 80%;
+    }
+    .modal .modal-body form input[type=text]{
+        width: auto;
+        height: 28px;
+    }
+    .modal .modal-body form button{
+        width: 70%;
+        height: 28px;
+        margin: 15px auto 0 auto;
+    }
+} 
+
+@media screen and (max-width: 360px){
+    .tmodal{
+        font-size: 25px;
+        text-align: center;
+    }
+} */
+
+/* @media screen and (max-width: 374px){
+    main{
+        justify-content: center;
+    }
+} */
+
+/* @media screen and (max-width: 315px){
+    #logo, #titulo{
+        font-size: 20px;
+    }
+} */
