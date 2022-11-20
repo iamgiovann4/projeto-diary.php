@@ -28,7 +28,7 @@ body > .container-fluid > .navbar {
     margin: 5px 5px 0 0;
 }
 
-img{
+.logoTitle > #svg > img{
     width: 40px;
     height: 35px;
 }
@@ -44,16 +44,15 @@ h1 {
     font-size: 40px;
 }
 
+.navbar{
+    height: 70px;
+}
+
 #navbarsite > .navbar-nav > .nav-item{ 
     font-weight: 600;
     font-size: 20px;
     margin: 0 0 0 20px;
 }
-
-/* .navbar-collapse {
-    display: flex;
-    justify-content: space-around;
-} */
 
 a {   /* todos os links do site */
     text-decoration: none; /* tirar o sublinhado dos links*/
@@ -71,7 +70,7 @@ a:hover{
 #navbarsite > .navbar-nav > .nav-item > a.active{  /*link do nav que está com a classe active, ou seja, ativado */
     color: var(--hover);                      
     font-weight: 700px;
-    border-bottom: 3px solid var(--hover);
+    border-bottom: 4px solid var(--hover);
     padding: 9px;
 }
 
@@ -106,13 +105,13 @@ section > .section-title{
     padding-left: 5px;
 }
 
-#productions {
+#imagens {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
 
-#productions .card-img{
+#imagens .card-img{
     width: 235px;
     min-height: 300px;
     background: var(--second);
@@ -121,7 +120,7 @@ section > .section-title{
     position: relative;
 }
 
-#productions .card-img a .mask{ /* mask é a div que está na posição div.card-img > a > "div.mask" */
+#imagens .card-img a .mask{ /* mask é a div que está na posição div.card-img > a > "div.mask" */
     position: absolute;
     background-color: #00000036;
     width: 100%;
@@ -131,49 +130,49 @@ section > .section-title{
     border-radius: 10px;
 }   
 
-#productions .card-img img{
+#imagens .card-img img{
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-#productions .card-img img:hover{
+#imagens .card-img img:hover{
     opacity: 0.7;
 }
 
-#productions .card-img div { /* padding dos conteúdos, como titulo, legenda e autor*/
+#imagens .card-img div { /* padding dos conteúdos, como titulo, legenda e autor*/
     padding: 10px;
 }
 
-#productions .card-img div a h2{
+#imagens .card-img div a h2{
     text-align: center;
     font-size: 30px;
     margin: 0 0 5px 0;
     color: var(--hover);
 }
 
-#productions .card-img div div p {
+#imagens .card-img div div p {
     margin: 0 0 5px 0;
     color: var(--letras);
     font-size: 18px;
 }
 
-#productions .card-img div div:nth-child(3) p{
+#imagens .card-img div div:nth-child(3) p{
     font-weight: 500;
     color: var(--letras);
 }
 
-#productions .card-img div div img {
+#imagens .card-img div div img {
     width: 22px;
     height: 22px;
     cursor: pointer;
 }
 
-#productions .card-img div div {
+#imagens .card-img div div {
     display: flex;
 }
 
-#productions .card-img div div img:nth-child(2) {
+#imagens .card-img div div img:nth-child(2) {
     margin-left: auto;
 }
 

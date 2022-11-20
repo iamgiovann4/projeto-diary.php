@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
 
     <title>Princess'Diary</title>
 </head>
-<body onload="loadImagens()">
+<body onload="loadTextos()">
     <div class="container-fluid">           
         <header class="navbar navbar-expand-lg navbar-light bg-feature bg-nav">
             <div class="main container flex">
@@ -26,7 +26,7 @@
                         <h1 id="logo">Princess'<span id="titulo">Diary</span></h1>
                     </div>
                 </a>
-
+    
                 <!-- Cria um botão do tipo sanduiche quando o tamanho da tela não for mais 'lg' -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
                     <span class="navbar-toggler-icon"></span>
@@ -34,8 +34,8 @@
 
                 <nav class="navbar-collapse collapse justify-content-center" id="navbarsite">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="index.html" class="nav-link active">Início</a></li>
-                        <li class="nav-item"><a href="texto.html" class="nav-link">Textos</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                        <li class="nav-item"><a href="texto.html" class="nav-link active">Textos</a></li>
                         <li class="nav-item"><a href="perfil.html" class="nav-link">Perfil</a></li>
                         <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
                     </ul>
@@ -45,11 +45,11 @@
 
         <main>
             <header class="container">
-                <button onclick="showModalImagem('#modal-cadastrar')">Adicionar Foto</button>
+                <button onclick="showModalTexto('#modal-cadastrar')">Adicionar texto</button>
             </header>
 
             <section class="container">
-                <h3 class="section-title">Suas Imagens</h3>
+                <h3 class="section-title">Seus textos</h3>
                 <article id="imagens">
                     <div class="card-img">
                     </div>
@@ -77,44 +77,40 @@
         </footer>    
         
         
-        <div class="modal" id="modal-cadastrar" onclick="hideModalImagem('#modal-cadastrar', event)">
+        <div class="modal" id="modal-cadastrar" onclick="hideModalTexto('#modal-cadastrar', event)">
             <div class="modal-body">
                 
-                <form onsubmit="insertImagem(event)"><!--method="POST" action="backend/insert.   php" -->
-                    <h1 class="tmodal text-align-center">Cadastrar Foto</h1>    
+                <form onsubmit="insertTexto(event)"><!--method="POST" action="backend/insert.   php" -->
+                    <h1 class="tmodal text-align-center">Cadastrar Texto</h1>    
                     <label>Título:</label>
                     <input type="text" name="titulo">
-                    <label>Legenda:</label>
-                    <input type="text" name="legenda">
-                    <label>Autor:</label>
-                    <input type="text" name="autor">
-                    <label>Cover:</label>
-                    <input type="text" name="cover">
+                    <label>Texto:</label>
+                    <input type="text" name="texto">
+                    <label>Data:</label>
+                    <input type="text" name="dia">
                     <button type="submit">Cadastrar</button>
                 </form>
             </div>
         </div>
 
-        <div class="modal" id="modal-editar" onclick="hideModalImagem('#modal-editar', event)">
+        <div class="modal" id="modal-editar" onclick="hideModalTexto('#modal-editar', event)">
             <div class="modal-body">
                 
-                <form onsubmit="editImagem(event)">
-                    <h1 class="tmodal text-align-center">Editar Imagens</h1>
-                    <label>Cover:</label>
-                    <input type="text" name="cover">
+                <form onsubmit="editTexto(event)">
+                    <h1 class="tmodal text-align-center">Editar Texto</h1>
                     <label>Título:</label>
                     <input type="text" name="titulo">
-                    <label>Legenda:</label>
-                    <input type="text" name="legenda">
-                    <label>Autor:</label>
-                    <input type="text" name="autor">
+                    <label>Texto:</label>
+                    <input type="text" name="texto">
+                    <label>Data:</label>
+                    <input type="text" name="dia">
                     <input type="hidden" name="id">
                     <button type="submit">Editar</button>
                 </form>
             </div>
         </div>
     </div>
-    
+
     <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

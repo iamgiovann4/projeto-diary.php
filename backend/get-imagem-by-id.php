@@ -14,9 +14,9 @@
         $count = $stmt->rowCount();
 
         if ($count == 1) {
-            $producao = $stmt->fetch(PDO::FETCH_ASSOC);
+            $imagem = $stmt->fetch(PDO::FETCH_ASSOC);
             $result["success"]["message"] = "Imagem deletada com sucesso!";
-            $result["data"] = $producao;
+            $result["data"] = $imagem;
         } else {
             $result["error"]["message"] = "ID: $id não encontrado!";
         }
