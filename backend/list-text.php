@@ -3,7 +3,7 @@
     //Require() : a função require() importa arquivos, porém, caso o mesmo não seja encontrado, será levantado uma exceção e a execução é finalizada. Essa é uma maneira de interrompermos a execução dos scripts caso alguma anomalia ocorra.
 
     try {
-        $stmt = $conn->prepare("SELECT id, titulo, texto, dia FROM addtext;");
+        $stmt = $conn->prepare("SELECT id, titulo, texto, dia FROM addtext ORDER BY dia DESC;");
         $stmt->execute();
 
         $textos = $stmt->fetchAll(PDO::FETCH_ASSOC);

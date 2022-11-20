@@ -44,10 +44,6 @@ h1 {
     font-size: 40px;
 }
 
-.navbar{
-    height: 70px;
-}
-
 #navbarsite > .navbar-nav > .nav-item{ 
     font-weight: 600;
     font-size: 20px;
@@ -111,24 +107,40 @@ section > .section-title{
     flex-wrap: wrap;
 }
 
+#textos {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
 #imagens .card-img{
     width: 235px;
     min-height: 300px;
     background: var(--second);
     border-radius: 10px;
-    margin: 20px;
+    margin: 18px auto 15px auto;
+    position: relative;
+}
+
+#textos .card-text {
+    width: 500px;
+    min-height: 300px;
+    /* max-height: 400px; */
+    background: var(--second);
+    border-radius: 10px;
+    margin: 18px auto 10px auto;
     position: relative;
 }
 
 #imagens .card-img a .mask{ /* mask é a div que está na posição div.card-img > a > "div.mask" */
     position: absolute;
-    background-color: #00000036;
+    background-color: #00000010;
     width: 100%;
     height: 353.13px;
     padding: 0;
     border-top: 10px;
     border-radius: 10px;
-}   
+}
 
 #imagens .card-img img{
     width: 100%;
@@ -136,43 +148,99 @@ section > .section-title{
     border-top-right-radius: 10px;
 }
 
-#imagens .card-img img:hover{
-    opacity: 0.7;
+#imagens .card-img > a:hover{
+    opacity: 0.8;
 }
 
-#imagens .card-img div { /* padding dos conteúdos, como titulo, legenda e autor*/
+#imagens .card-img div { /* padding dos conteúdos, como titulo, legenda e autor */
     padding: 10px;
 }
 
-#imagens .card-img div a h2{
+#textos .card-text div { /* padding dos conteúdos, como titulo, texto e data */
+    padding: 10px;
+}
+
+#imagens .card-img div a h2{ /* titulo das imagens */
     text-align: center;
     font-size: 30px;
     margin: 0 0 5px 0;
     color: var(--hover);
 }
 
-#imagens .card-img div div p {
+#textos .card-text div h2{ /* titulo dos textos */
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 5px 0;
+    color: var(--hover);
+}
+
+#imagens .card-img div div p { /* legenda das imagens */
     margin: 0 0 5px 0;
     color: var(--letras);
     font-size: 18px;
 }
 
-#imagens .card-img div div:nth-child(3) p{
+#textos .card-text div div p { /* texto dos textos */
+    margin: 0 0 5px 0;
+    color: var(--letras);
+    font-size: 18px;
+}
+
+#textos .card-text div div:nth-child(2) p{
+    overflow-y: auto;
+    max-height: 150px;
+}
+
+/*personalizar a barra em geral*/
+#textos .card-text div div:nth-child(2) p::-webkit-scrollbar {
+    width: 4px;
+}
+
+/*aqui é para personalizar o fundo da barra*/
+#textos .card-text div div:nth-child(2) p::-webkit-scrollbar-track{
+    background: rgb(250, 193, 193);
+}
+
+/*aqui é a alça da barra, que demonstra a altura que você está na página*/
+#textos .card-text div div:nth-child(2) p::-webkit-scrollbar-thumb{
+    background: rgb(211, 86, 113);
+}
+
+#imagens .card-img div div:nth-child(3) p{ /* Formatação do autor */
     font-weight: 500;
     color: var(--letras);
 }
 
-#imagens .card-img div div img {
+#textos .card-text div div:nth-child(3) p{ /* Formatação das datas */
+    font-weight: 500;
+    color: var(--letras);
+}
+
+#imagens .card-img div div img { /* Tamanho dos icones */
     width: 22px;
     height: 22px;
     cursor: pointer;
 }
 
-#imagens .card-img div div {
+#textos .card-text div div img { /* Tamanho dos icones */
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+#imagens .card-img div div { /* deixando os icones do lado do autor */
     display: flex;
 }
 
-#imagens .card-img div div img:nth-child(2) {
+#textos .card-text div div { /* deixando os icones do lado da data */
+    display: flex;
+}
+
+#imagens .card-img div div img:nth-child(2) { /* icones no final do lado direito */
+    margin-left: auto;
+}
+
+#textos .card-text div div img:nth-child(2) { /* icones no final do lado direito */
     margin-left: auto;
 }
 
@@ -235,8 +303,7 @@ footer:hover {
     background-color: var(--second);
 }
 
-
-/* @media screen and (max-width: 767px) {
+ @media screen and (max-width: 767px) {
     .modal .modal-body form{
         width: 80%;
     }
@@ -251,7 +318,7 @@ footer:hover {
     }
 } 
 
-@media screen and (max-width: 360px){
+/*@media screen and (max-width: 360px){
     .tmodal{
         font-size: 25px;
         text-align: center;

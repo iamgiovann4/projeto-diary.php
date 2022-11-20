@@ -6,14 +6,16 @@
     $titulo = $_POST["titulo"];
     $legenda = $_POST["legenda"];
     $autor = $_POST["autor"];
+    $dia = $_POST["dia"];
 
     try {
-        $stmt = $conn->prepare("INSERT INTO addphoto (cover, titulo, legenda, autor)
-        VALUES (:cover, :titulo, :legenda, :autor)");
+        $stmt = $conn->prepare("INSERT INTO addphoto (cover, titulo, legenda, autor, dia)
+        VALUES (:cover, :titulo, :legenda, :autor, :dia)");
         $stmt->bindParam(':cover', $cover);
         $stmt->bindParam(':titulo', $titulo);
         $stmt->bindParam(':legenda', $legenda);
         $stmt->bindParam(':autor', $autor);
+        $stmt->bindParam(':dia', $dia);
 
         $stmt->execute();
         // echo "Cadastro com sucesso!";
@@ -26,6 +28,7 @@
         $result["data"]["titulo"] = $titulo;
         $result["data"]["legenda"] = $legenda;
         $result["data"]["autor"] = $autor;
+        $result["data"]["dia"] = $dia;
 
         header('Content-Type: Text/json'); //para ser enviado no formato json.
         echo json_encode($result); //exibir o resultado.

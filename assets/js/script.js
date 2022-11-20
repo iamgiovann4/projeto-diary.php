@@ -60,6 +60,9 @@ async function loadImagens(){
                     </div>
                     <div>
                         <p>${img.autor}</p>
+                    </div>
+                    <div>
+                        <p>${img.dia}</p>
                         <img src="assets/img/delete.svg" alt="Apagar"   onclick="deleteImagem(${img.id})">
                         <img src="assets/img/edit.svg" alt="Editar"    onclick="loadImagemData(${img.id})">
                     </div>
@@ -93,6 +96,8 @@ async function loadImagemData(id){
         legenda.value = result.data.legenda
         const autor = document.querySelector('#modal-editar input[name=autor]')
         autor.value = result.data.autor
+        const dia = document.querySelector('#modal-editar input[name=dia]')
+        dia.value = result.data.dia
         const id = document.querySelector('#modal-editar input[name=id]')
         id.value = result.data.id
     }
@@ -122,6 +127,8 @@ function clearFormImagem(idModal) {
     legenda.value=''
     const autor = document.querySelector(`${idModal} input [name=autor]`)
     autor.value=''
+    const dia = document.querySelector(`${idModal} input [name=dia]`)
+    dia.value=''
 }
 
 /* JAVASCRIPT LINK TEXTO */
@@ -167,7 +174,7 @@ async function loadTextos(){
     const response = await fetch("backend/list-text.php")
     const result = await response.json()
     if (result?.success) {
-        const listTextos = document.querySelector('#imagens')
+        const listTextos = document.querySelector('#textos')
         listTextos.innerHTML = ''
         const texto = result.data
         texto.map((text) => {
@@ -176,12 +183,14 @@ async function loadTextos(){
                 <div>
                     <div>
                         <h2>${text.titulo}</h2>
-                        <p>${text.texto}</p>
-                        <p>${text.dia}</p>
                     </div>
                     <div>
-                        <img src="assets/img/delete.svg" alt="Apagar"   onclick="deleteTexto(${text.id})">
-                        <img src="assets/img/edit.svg" alt="Apagar"    onclick="loadTextoData(${text. id})">
+                        <p>${text.texto}</p>
+                    </div>
+                    <div>
+                        <p>${text.dia}</p>
+                        <img src="assets/img/delete.svg" alt="Apagar" onclick="deleteTexto(${text.id})">
+                        <img src="assets/img/edit.svg" alt="Editar" onclick="loadTextoData(${text.id})">
                     </div>
                 </div>
             </div>`

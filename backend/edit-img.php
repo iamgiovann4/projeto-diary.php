@@ -6,15 +6,17 @@
     $titulo = $_POST["titulo"];
     $legenda = $_POST["legenda"];
     $autor = $_POST["autor"];
+    $dia = $_POST["dia"];
 
     try{
-        $stmt = $conn->prepare("UPDATE addphoto SET cover = :cover, titulo = :titulo, legenda = :legenda, autor = :autor WHERE id = :id;");
+        $stmt = $conn->prepare("UPDATE addphoto SET cover = :cover, titulo = :titulo, legenda = :legenda, autor = :autor, dia = :dia WHERE id = :id;");
         
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':cover', $cover);
         $stmt->bindParam(':titulo', $titulo);
         $stmt->bindParam(':legenda', $legenda);
         $stmt->bindParam(':autor', $autor);
+        $stmt->bindParam(':dia', $dia);
 
         $stmt->execute();
 
@@ -28,6 +30,7 @@
             $result["data"]["titulo"] = $titulo;
             $result["data"]["legenda"] = $legenda;
             $result["data"]["autor"] = $autor;
+            $result["data"]["dia"] = $dia;
         } else {
             $result["error"]["message"] = "ID: $id não encontrado!";
         }
