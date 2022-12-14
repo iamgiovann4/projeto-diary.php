@@ -44,7 +44,7 @@
 
         <main>
             <header class="container">
-                <button onclick="showModalTexto('#modal-cadastrar')">Adicionar texto</button>
+                <button onclick="showModal('#modal-cadastrar')">Adicionar texto</button>
             </header>
 
             <section class="container">
@@ -74,12 +74,10 @@
             <p id="sobre">Site desenvolvido para fins acadêmicos. Princess'Diary cadastra suas imagens e anotações.</p>
             <p>© Copyright 2022 Princess'Diary | Todos os direitos Reservados</p>
             <p>Giovanna Siqueira Nicolau</p>
-        </footer>    
+        </footer>
         
-        
-        <div class="modal" id="modal-cadastrar" onclick="hideModalTexto('#modal-cadastrar', event)">
+        <div class="modal" id="modal-cadastrar" onclick="hideModal('#modal-cadastrar', event)">
             <div class="modal-body">
-                
                 <form onsubmit="insertTexto(event)"><!--method="POST" action="backend/insert.   php" -->
                     <h1 class="tmodal text-align-center">Cadastrar Texto</h1>    
                     <label>Título:</label>
@@ -93,9 +91,8 @@
             </div>
         </div>
 
-        <div class="modal" id="modal-editar" onclick="hideModalTexto('#modal-editar', event)">
+        <div class="modal" id="modal-editar" onclick="hideModal('#modal-editar', event)">
             <div class="modal-body">
-                
                 <form onsubmit="editTexto(event)">
                     <h1 class="tmodal text-align-center">Editar Texto</h1>
                     <label>Título:</label>

@@ -1,12 +1,11 @@
-/* JAVASCRIPT LINK INÍCIO */
-
-function showModalImagem(idModal){ 
+/* JAVASCRIPT DE AMBOS */
+function showModal(idModal){ 
     //idModalImg é usado para avisar que há um parâmetro lá no html, o texto pode ser qualquer coisa para avisar que o parâmetro será um texto.
     const modal = document.querySelector(idModal)
     modal.style.display = "flex"
 }
 
-function hideModalImagem(idModal, event) {
+function hideModal(idModal, event) {
     if(event.target.className === 'modal'){
         const modal = document.querySelector(idModal)
         modal.style.display = 'none'
@@ -14,13 +13,14 @@ function hideModalImagem(idModal, event) {
 }
 
 //forçar o fechamento após receber a mensagem de alerta
-function closeAllModalImagem() {
+function closeAllModal() {
     const modais = document.querySelectorAll('.modal') // irá pegar todas as classes modal.
     modais.forEach(modal => { //ele irá passar como se fosse um laço um por um, ou seja, se tiver 5 modais ele irá rodar 5 vezes.
         modal.style.display = 'none'
     })
 }
 
+/* JAVASCRIPT LINK INÍCIO */
 //toda a resposta através do servidor:
 async function insertImagem(event) {
     event.preventDefault() //tira a forma padrão, e não recarrega a página.
@@ -31,7 +31,7 @@ async function insertImagem(event) {
     })
     const result = await response.json() //await informa que tem que aguardar.
     if (result?.success) {
-        closeAllModalImagem() 
+        closeAllModal() 
         alert('Sua imagem '+result.data.titulo+' foi cadastrada com sucesso!')
         loadImagens()
     }
@@ -87,7 +87,7 @@ async function loadImagemData(id){
     const response = await fetch('backend/get-imagem-by-id.php?id='+id)
     const result = await response.json()
     if (result?.success) {
-        showModalImagem("#modal-editar")
+        showModal("#modal-editar")
         const cover = document.querySelector('#modal-editar input[name=cover]')
         cover.value = result.data.cover
         const titulo = document.querySelector('#modal-editar input[name=titulo]')
@@ -112,7 +112,7 @@ async function editImagem(event) {
     })
     const result = await response.json()
     if (result?.success) {
-        closeAllModalImagem()
+        closeAllModal()
         alert('Sua imagem '+result.data.titulo+' foi editada com sucesso!')
         loadImagens()
     }
@@ -132,28 +132,6 @@ function clearFormImagem(idModal) {
 }
 
 /* JAVASCRIPT LINK TEXTO */
-
-function showModalTexto(idModal){ 
-    //idModal é usado para avisar que há um parâmetro lá no html, o texto pode ser qualquer coisa para avisar que o parâmetro será um texto.
-    const modal = document.querySelector(idModal)
-    modal.style.display = "flex"
-}
-
-//forçar o fechamento após receber a mensagem de alerta
-function closeAllModalTexto() {
-    const modais = document.querySelectorAll('.modal') // irá pegar todas as classes modal.
-    modais.forEach(modal => { //ele irá passar como se fosse um laço um por um, ou seja, se tiver 5 modais ele irá rodar 5 vezes.
-        modal.style.display = 'none'
-    })
-}
-
-function hideModalTexto(idModal, event) {
-    if(event.target.className === 'modal'){
-        const modal = document.querySelector(idModal)
-        modal.style.display = 'none'
-    }
-}
-
 //toda a resposta através do servidor:
 async function insertTexto(event) {
     event.preventDefault() //tira a forma padrão, e não recarrega a página.
@@ -164,7 +142,7 @@ async function insertTexto(event) {
     })
     const result = await response.json() //await informa que tem que aguardar.
     if (result?.success) {
-        closeAllModalTexto() 
+        closeAllModal() 
         alert('Seu texto '+result.data.titulo+' foi cadastrado com sucesso!')
         loadTextos()
     }
@@ -213,7 +191,7 @@ async function loadTextoData(id){
     const response = await fetch('backend/get-texto-by-id.php?id='+id)
     const result = await response.json()
     if (result?.success) {
-        showModalTexto("#modal-editar")
+        showModal("#modal-editar")
         const titulo = document.querySelector('#modal-editar input[name=titulo]')
         titulo.value = result.data.titulo
         const texto = document.querySelector('#modal-editar input[name=texto]')
@@ -234,7 +212,7 @@ async function editTexto(event) {
     })
     const result = await response.json()
     if (result?.success) {
-        closeAllModalTexto()
+        closeAllModal()
         alert('Seu texto '+result.data.titulo+' foi editado com sucesso!')
         loadTextos()
     }
